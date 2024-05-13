@@ -13,10 +13,6 @@ use App\Models\Categoria_proyecto;
 use Illuminate\Support\Facades\Auth;
 class ProyectoController extends Controller
 {
-
-
-
-    
     public function mostrarDatos()
     {   
         /** @var \App\Models\Duenio $duenio */

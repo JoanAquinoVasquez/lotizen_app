@@ -30,6 +30,16 @@ class Supervisor extends Model
 
     public function gerenteComercial()
     {
-        return $this->belongsTo(GerenteComercial::class, 'id_gerente_comercial');
+        return $this->belongsTo(Gerente_comercial::class, 'id_gerente_comercial');
+    }
+
+    public function asesor()
+    {
+        return $this->hasMany(Asesor::class);
+    }
+
+    public function metaSupervisor()
+    {
+        return $this->hasMany(Meta_supervisor::class);
     }
 }

@@ -79,12 +79,12 @@ Route::group(['middleware' => ['Gerente_comercialSession']], function () {
     Route::get('/gerente_comercial/miperfil', [Gerente_comercialPerfilController::class, 'mostrarDatos']);
     Route::get('/gerente_comercial/miperfil', [Gerente_comercialPerfilController::class, 'mostrarDatos'])->name('gerente_comercial_miperfil');
     Route::post('/gerente_comercial/guardar_datos', [Gerente_comercialPerfilController::class, 'guardarDatos'])->name('gerente_comercial_guardar_datos');
-    Route::get('/gerente_comercial/proyecto', [Gerente_comercialProyectoController::class, 'mostrarDatos']);
     Route::get('/gerente_comercial/proyecto', [Gerente_comercialProyectoController::class, 'mostrarDatos'])->name('gerente_comercial_proyecto');
     Route::get('/gerente_comercial/logout', [Gerente_comercialLoginController::class, 'logout'])->name('gerente_comercial_logout');
 
-    Route::post('/gerente_comercial/guardar_datos{id}', [Gerente_comercialProyectoController::class, 'guardarProyecto'])->name('gerente_comercial_guardar_Proyecto');
-    Route::post('/gerente_comercial/agregar_proyecto', [Gerente_comercialProyectoController::class, 'agregarProyecto'])->name('gerente_comercial_agregarProyecto');;
+    Route::post('/gerente_comercial/proyecto', [Gerente_comercialProyectoController::class, 'guardarProyecto'])->name('gerente_comercial_guardar_Proyecto');
+    Route::get('/gerente_comercial/agregarProyecto', [Gerente_comercialProyectoController::class, 'mostrarFormProyecto'])->name('gerente_comercial_mostrarFormProyecto');
+    Route::post('/gerente_comercial/agregarProyecto', [Gerente_comercialProyectoController::class, 'agregarProyecto'])->name('gerente_comercial_agregarProyecto');
     Route::get('/gerente_comercial/proyecto/{id}', [Gerente_comercialProyectoController::class, 'mostrarDetallesProyecto'])->name('gerente_comercial_mostrarDetallesProyecto');
     Route::post('/gerente_comercial/proyecto/{id}/eliminar', [Gerente_comercialProyectoController::class, 'eliminarProyecto']);
     Route::get('/obtener-proyecto/{id}', [Gerente_comercialProyectoController::class, 'obtenerProyecto']);
