@@ -1,0 +1,237 @@
+
+.PerfilUsuario{
+    border: 5px;
+    background-color: blue;
+}
+
+.LogoLotizen-Dashboard{
+    width: 70px;
+    height: 70px;  
+    margin: auto;
+    padding: 40px;
+    display: block;
+
+    
+}
+
+.MenuDashboard nav ul li {
+    margin-bottom: 15px; 
+}
+
+.settings{
+    color: white;
+    height: 50px;
+}
+
+.dashboard-menu {
+  color: #AEAEAE;
+  text-align: start;
+  margin-top: 30px;
+}
+
+.dashboard-menu-principal {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+ul{
+  list-style-type: none; /* Quitar los marcadores de lista */
+  padding: 0;
+}
+
+ul li {
+  margin: 15px 0; 
+}
+
+ul li a {
+  color: #AEAEAE; 
+  text-decoration: none;
+}
+
+
+ul li a:hover {
+  color: #9D2062; 
+}
+
+
+.botonBuscar{
+    border-radius: 5px;  
+    width: 800px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.BotonSubmit{
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin-left: 10px;
+  padding: 4px;  
+}
+
+
+.FotoperfilUsuario{
+    width: 40px;
+}
+
+
+#profileDropdown .menuperfil a {
+    display: block;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+
+#profileDropdown .menuperfil a:hover {
+    background-color: #e9ecef;
+  }  
+
+#profileDropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px; 
+  }
+  
+#profileDropdown .UsuarioPerfil {
+    display: flex;
+    align-items: center;
+  }
+  
+#profileDropdown .UsuarioPerfil img {
+    border-radius: 50%;
+    margin-right: 8px; 
+  }
+  
+#profileDropdown .menuperfil {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+  }
+  
+#profileDropdown.show .menuperfil {
+    display: block;
+  }
+
+
+  .MenuDashboard {
+    background: #1E1E1E;
+    max-width: 30%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    
+  }
+  
+  .MenuHorizontal{
+    position: fixed; 
+    top: 0; 
+    left: 255px; 
+    max-width: 83%;
+    width: 1520px;
+    height: 100px;
+    background-color: #e9ecef;
+
+  }
+  
+.PerfilUsuario{
+  border-radius: 5px;
+  background-color: #5644FC;
+  margin-left: 10px;
+  margin-right: 20px;
+  height: 40px;
+
+
+}
+
+.PerfilUsuario .nav-item {
+  display: flex; 
+  align-items: center;
+}
+
+.PerfilUsuario .nav-link {
+  margin-right: 10px; 
+}
+
+.PerfilUsuario .btn {
+  display: flex; 
+  align-items: center; 
+  background-color: #5644FC; 
+  border-color: #5644FC; 
+  color: white;
+
+}
+
+.PerfilUsuario .botonajuste {
+  width: 24px;
+  height: 24px; 
+  align-items: end;;
+}
+
+.PerfilUsuario .TextoUsuario {
+  color: white !important; 
+  margin-left: 10px;
+}
+
+.botonajuste {
+  position: absolute;
+  float: right;
+  justify-content: flex-end; 
+  margin-left: 50px;
+}
+
+.dashboard-menu-logout{
+  color: #F59121  ;
+  text-align: start; 
+}
+
+ 
+.btn-outline-light {
+  background-color: transparent; /* Fondo transparente */
+  border: none;
+}
+
+.MenuDashboardDueno{
+  position: relative;
+  margin-left: 280px;
+  margin-right: 45px;
+}
+
+.DashboardInicioPrincipal{
+  margin-top: 40px;
+}
+
+ 
+.avance-proyecto{
+  font-size: 1.1em;
+  font-style:normal;
+  font-weight: bold;
+}
+
+.card-proyectos-avance{
+  background-color: #f7edad;
+  border-radius: 0.5em;
+}
+
+.bienvenida-pag-user{
+  font-weight: bolder;
+}
+
+.bienvenida-pag-user-principal{
+  margin-bottom: 2em;
+}

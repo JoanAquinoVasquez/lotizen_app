@@ -1,0 +1,40 @@
+.card-header-datos{
+    font-weight: bold;  
+ 
+ 
+}
+
+.card-datos{
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.proyectos-informacion{
+    margin-bottom: 15px;
+}
+
+.card-titulo{
+    margin-bottom: -3em;
+}
+
+.card-informacion-proyecto{
+    margin-right: 1em;
+    margin-left: 1em;
+    height: 95px;
+}
+
+.title-card-informacion{
+    font-size: medium;
+}
+
+.texto-card-informacion {
+    font-size: 15px;
+}
+
+.card-inmueble{
+    height: 700px;
+}
+
+.card-meta-title{
+    font-weight: bold;
+}
