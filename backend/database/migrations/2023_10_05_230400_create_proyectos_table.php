@@ -23,7 +23,7 @@ return new class extends Migration
 
              // Definir claves foráneas
             $table->foreignId('duenio_id')->constrained('duenio')->onDelete('cascade');
-            $table->foreignId('gerente_comercial_id')->constrained('gerente_comercial')->onDelete('cascade');
+            $table->foreignId('gerente_comercial_id')->nullable()->constrained('gerente_comercial')->onDelete('cascade');
             $table->foreignId('id_categoria_proyecto')->constrained('categoria_proyecto');
             $table->timestamps();
         });

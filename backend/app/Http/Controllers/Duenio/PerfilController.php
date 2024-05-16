@@ -8,6 +8,9 @@ use App\Models\Duenio;
 use App\Models\Rubro;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+
+
 class PerfilController extends Controller
 {
 
@@ -16,8 +19,6 @@ class PerfilController extends Controller
     
     public function mostrarDatos()
     {   
-
-        
         /** @var \App\Models\Duenio $duenio */
         $duenio = Duenio::find(session('id_duenio'));
 

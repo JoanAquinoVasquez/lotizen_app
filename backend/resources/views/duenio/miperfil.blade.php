@@ -38,13 +38,13 @@
         <h3>Menú Lateral</h3>
         <ul>
             <li class="menu-item"><a href="/duenio/dashboard">Inicio</a></li>
-            <li class="menu-item"><a href="/duenio/miperfil">Mi Perfil</a></li>
+            <li class="menu-item"><a href="{{ route('duenio_miperfil')}}">Mi Perfil</a></li>
             <li class="menu-item"><a href="/duenio/logout">Cerrar Sesion</a></li>
         </ul>
     </div>
     <div class="main-content">
         <h1>Datos Generales</h1>
-        <form method="POST" action="{{ route('duenio_guardar_datos') }}">
+        <form method="POST" action="{{ route('duenio_guardar_datos_perfil') }}">
             @csrf
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label for="nombre_duenio">Nombre:</label>

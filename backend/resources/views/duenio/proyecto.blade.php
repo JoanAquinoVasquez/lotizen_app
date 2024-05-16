@@ -26,14 +26,13 @@
                 <h1>Listado de Proyectos</h1>
                 <!-- Agrega aquí un formulario o sección para buscar y agregar proyectos -->
                 <!-- Ejemplo: -->
-                <form method="POST" action="{{ route('duenio_agregarProyecto') }}">
-                    @csrf
+       
                     <!-- Campos para agregar proyectos -->
                     <input type="text" name="buscar_proyecto" id="buscarProyecto" placeholder="Nombre del Proyecto">
 
                     <!-- ... Otros campos para agregar proyectos ... -->
-                    <button type="submit">Agregar Proyecto</button>
-                </form>
+                    <a href="{{ route('duenio_mostrarFormProyecto') }}">Agregar Proyecto</a>
+                
                 <!-- Listado de proyectos asociados al gerente comercial -->
                 <ul id="listaProyectos">
                     @if($duenio->proyectos)
@@ -56,20 +55,39 @@
 
 
                 @if(isset($proyecto))
-                <form method="POST" action="{{ route('duenio_guardar_Proyecto', ['id' => $proyecto->id]) }}">
+                <form method="POST" action="{{ route('duenio_guardar_Proyecto')}}">
                     @csrf
                     <!-- Campos para editar detalles del proyecto -->
-                    <input type="text" name="nombre_proyecto" value="{{ $proyecto->nombre }}">
-                    <input type="text" name="departamento_proyecto" value="{{ $proyecto->departamento }}">
-                    <input type="text" name="ciudad_proyecto" value="{{ $proyecto->ciudad }}">
-                    <input type="text" name="direccion_proyecto" value="{{ $proyecto->direccion }}">
-                    <input type="date" name="fecha_inicio_proyecto" value="{{ $proyecto->fecha_inicio }}">
-                    <!-- ... Otros campos para editar detalles del proyecto ... -->
+                        <input type="text" name="id_proyecto" value="{{ $proyecto->id }}" hidden>
+                        <label for="nombre">Nombre </label>
+                        <input type="text" name="nombre_proyecto" value="{{ $proyecto->nombre }}">
+                        <label for="id_categoria_proyecto">Categoría del Proyecto:</label>
+                        <select id="id_categoria_proyecto" name="id_categoria_proyecto" required>
+                            @foreach ($categorias_proyectos as $categoria_proyecto)
+                                <option value="{{ $categoria_proyecto->id }}"
+                                    {{ $proyecto->id_categoria_proyecto == $categoria_proyecto->id ? 'selected' : '' }}>
+                                    {{ $categoria_proyecto->nombre }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <label for="nombre">Departamento </label>
+                        <input type="text" name="departamento_proyecto" value="{{ $proyecto->departamento }}">
+                        <label for="nombre">Ciudad </label>
+                        <input type="text" name="ciudad_proyecto" value="{{ $proyecto->ciudad }}">
+                        <label for="nombre">Direccion </label>
+                        <input type="text" name="direccion_proyecto" value="{{ $proyecto->direccion }}">
+                        <label for="nombre">Fecha inicio </label>
+                        <input type="date" name="fecha_inicio_proyecto" value="{{ $proyecto->fecha_inicio }}"><!-- ... Otros campos para editar detalles del proyecto ... -->
                     <button type="submit">Guardar Cambios</button>
+                   
                     <!-- Puedes agregar un botón para eliminar el proyecto -->
                     <!-- Ten en cuenta la seguridad y confirma la eliminación con un modal o similar -->
                 </form>
-
+                <form method="POST" action="{{ route('duenio_eliminarProyecto', ['id' => $proyecto->id]) }}">
+                    @csrf
+                    @method('DELETE') <!-- Asegúrate de agregar el método DELETE -->
+                    <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este proyecto?')">Eliminar Proyecto</button>
+                </form>
                 @else
                 <p>No has seleccionado un proyecto.</p>
             @endif
@@ -93,7 +111,9 @@
                 method: 'GET',
                 success: function(response) {
                     // Actualizar los valores de los campos del formulario
+                    $('input[name="id_proyecto"]').val(response.id);
                     $('input[name="nombre_proyecto"]').val(response.nombre);
+                    $('select[name="id_categoria_proyecto"]').val(response.id_categoria_proyecto);
                     $('input[name="departamento_proyecto"]').val(response.departamento);
                     $('input[name="ciudad_proyecto"]').val(response.ciudad);
                     $('input[name="direccion_proyecto"]').val(response.direccion);

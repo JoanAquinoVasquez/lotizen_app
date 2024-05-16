@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="/duenio/dashboard">Inicio</a></li>
-            <li><a href="/duenio/miperfil">Mi Perfil</a></li>
+            <li> <a href="{{ route('duenio_miperfil')}}">Mi Perfil</a></li>
             <li><a href="/duenio/logout">Cerrar Sesión</a></li>
         </ul>
     </nav>

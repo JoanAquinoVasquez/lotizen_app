@@ -9,8 +9,7 @@ use App\Http\Controllers\Gerente_comercial\ProyectoController as Gerente_comerci
 use App\Http\Controllers\Gerente_comercial\PerfilController as Gerente_comercialPerfilController;
 use App\Http\Controllers\Gerente_comercial\LoginController as Gerente_comercialLoginController;
 use App\Http\Controllers\Gerente_comercial\DashboardController as Gerente_comercialDashboardController;
-
-
+use App\Models\Duenio;
 use Illuminate\Support\Facades\Route;
 
 
@@ -54,22 +53,19 @@ Route::group(['middleware' => ['DuenioSession']], function () {
     Route::get('/duenio/dashboard', [DuenioDashboardController::class, 'index']);
     Route::get('/duenio/miperfil', [DuenioPerfilController::class, 'mostrarDatos']);
     Route::get('/duenio/miperfil', [DuenioPerfilController::class, 'mostrarDatos'])->name('duenio_miperfil');
-    Route::post('/duenio/guardar_datos', [DuenioPerfilController::class, 'guardarDatos'])->name('duenio_guardar_datos');
+    Route::post('/duenio/guardar_datos_perfil', [DuenioPerfilController::class, 'guardarDatos'])->name('duenio_guardar_datos_perfil');
     Route::post('/duenio/guardar_datos_empresa', [DuenioPerfilController::class, 'guardarDatosEmpresa'])->name('duenio_guardar_datos_empresa');
-    Route::get('/duenio/proyecto', [DuenioProyectoController::class, 'mostrarDatos']);
     Route::get('/duenio/proyecto', [DuenioProyectoController::class, 'mostrarDatos'])->name('duenio_proyecto');
     Route::post('/duenio/guardar_datos_proyecto', [DuenioProyectoController::class, 'guardarDatos'])->name('duenio_guardar_datos_proyecto');
     Route::post('/duenio/guardar_datos_empresa_proyecto', [DuenioProyectoController::class, 'guardarDatosEmpresa'])->name('duenio_guardar_datos_empresa_proyecto');
     Route::get('/duenio/logout', [DuenioLoginController::class, 'logout'])->name('duenio_logout');
-    
-
-
-    Route::post('/duenio/guardar_datos{id}', [DuenioProyectoController::class, 'guardarProyecto'])->name('duenio_guardar_Proyecto');
-    Route::post('/duenio/agregar_proyecto', [DuenioProyectoController::class, 'agregarProyecto'])->name('duenio_agregarProyecto');;
+    Route::post('/duenio/guardar_datos', [DuenioProyectoController::class, 'guardarProyecto'])->name('duenio_guardar_Proyecto');
     Route::get('/duenio/proyecto/{id}', [DuenioProyectoController::class, 'mostrarDetallesProyecto'])->name('duenio_mostrarDetallesProyecto');
-    Route::post('/duenio/proyecto/{id}/eliminar', [DuenioProyectoController::class, 'eliminarProyecto']);
     Route::get('/obtener-proyecto/{id}', [DuenioProyectoController::class, 'obtenerProyecto']);
-    // web.php
+    Route::get('/duenio/agregarProyecto', [DuenioProyectoController::class, 'mostrarFormProyecto'])->name('duenio_mostrarFormProyecto');
+    Route::post('/duenio/agregarProyecto', [DuenioProyectoController::class, 'agregarProyecto'])->name('duenio_agregarProyecto');
+    // web.php 
+    Route::delete('/duenio/proyecto/{id}/eliminar', [DuenioProyectoController::class, 'eliminarProyecto'])->name('duenio_eliminarProyecto');
     Route::get('/buscar-proyecto', [DuenioProyectoController::class, 'buscarProyecto']);
 });
 
